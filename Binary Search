@@ -1,0 +1,41 @@
+# Practice
+For Exam 
+        /*------------Binary Search---------------*/
+
+int main()
+{
+    int arr[100],n,i,first,ed,mid,key;
+    printf("Enter Total Number Of Elements: ");
+    scanf("%d",&n);
+    printf("Enter %d arry numbers \n",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the Searching Value: ");
+    scanf("%d",&key);
+
+    first=0;
+    ed=n-1;
+    while(first<=ed)
+    {
+        mid=(first+ed)/2;
+        if(key==arr[mid])
+        {
+            printf("%d found at location %d \n",key,mid+1);
+            break;
+        }
+       else if(key<arr[mid])
+        {
+            ed=mid-1;
+        }
+        else
+        {
+            first=mid+1;
+        }
+    }
+    if(first>ed)
+    {
+        printf("Not Found!! %d is not present In the list",key);
+    }
+}
